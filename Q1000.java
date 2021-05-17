@@ -9,7 +9,6 @@ public class Q1000 {
 		int y = scanner.nextInt();
 		
 		System.out.println(x+y);
-
 	}
 
 }
