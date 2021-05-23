@@ -9,9 +9,7 @@ public class Q1439 {
 		Scanner scanner = new Scanner(System.in);
 		String num = scanner.next();
 		ArrayList<Character> array = new ArrayList<Character>();
-		int zero=0, one=0, result=0;
-		char type, origin;
-		boolean exit = false;
+		int zero=0, one=0;
 		
 		for(int i=0; i<num.length(); i++) {
 			array.add(num.charAt(i));
@@ -40,41 +38,17 @@ public class Q1439 {
 		}
 		
 		if(one<=zero) {
-			type = '1';
-			origin = '0';
+			System.out.println(one);
 		}
 		else {
-			type = '0';
-			origin = '1';
+			System.out.println(zero);
 		}
-		
-		while(true) {
-			if(!array.contains(type)) break;
-			
-			for(int i=0; i<array.size(); i++) {
-				if(array.get(i)!=type) {
-					continue;
-				}else {
-					array.set(i, origin);
-				}
 
-				if(i==array.size()-1) {
-					result++;
-					break;
-				}
-				if(array.get(i+1)==origin) {
-					result++;
-					break;
-				}
-			}
-		}
-		
-		System.out.println(result);
 	}
 
 }
 
 // 문제 해결
 // 1. 숫자를 입력받는다
-// 2. 0과 1의 개수를 각각 센다. 연속된 구역이 적은 것을 뒤집는다.
-// 3. 앞에서부터 뒤집는다. type 숫자가 없을 때까지 반복.
+// 2. 0과 1의 연속된 구역 수를 센다.
+// 3. 적은 연속된 구역 수가 정답.
